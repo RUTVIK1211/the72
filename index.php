@@ -13,7 +13,7 @@ require 'import/header.php';
         </div>
         <!-- Main content -->
         <section class="content">
-          <div class="container-fluid">
+          <div class="container">
             <!-- Small boxes (Stat box) -->
             <div class="row">
               <div class="col-lg-6 col-6">
