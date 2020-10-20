@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(empty($_SESSION['email']))
+{
+   header("Location: login.php");
+}
+
 require 'import/header.php';
 ?>
 
@@ -34,7 +40,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped rounded border-info">
                   <thead>
-                  <tr> 	
+                  <tr>
                     <th>Rendering engine</th>
                     <th>Browser</th>
                     <th>Platform(s)</th>
@@ -50,7 +56,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
                     </td>
                     <td>Win 95+</td>
                     <td> 4</td>
-                    <td> 
+                    <td>
                     <button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0" data-toggle="modal" data-target="#modal-xl">
                   		View more
                 </button></td>

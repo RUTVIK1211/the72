@@ -28,9 +28,9 @@
     <div class="card-body login-card-body rounded border-primary">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="index.php" method="post">
+      <form action="controller.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control"  name="email" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -56,17 +56,15 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <input  name="action" value="login" type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-
       <p class="mb-1">
-        <a href="change-password.html">I forgot my password</a>
+        <a href="change-password.php">I forgot my password</a>
       </p>
-      
+
     </div>
     <!-- /.login-card-body -->
   </div>
