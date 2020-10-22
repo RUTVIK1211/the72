@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <nav class="main-header navbar navbar-expand-md bg-teal disabled color-palette navbar-dark">
         <div class="container">
           <a href="index.php" class="navbar-brand">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light">Ets Manoka</span>
           </a>
           <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -66,13 +66,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <div class="dropdown-divider"></div>
-                <a href="change-password.html" class="dropdown-item">
+                <a href="change-password.php" class="dropdown-item">
                   <i class="fa fa-key" aria-hidden="true"> </i>&nbsp;Change password
                 </a>
+                <?php
+                session_start();
+                if (!empty($_SESSION['email'])) :?>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <a href="logout.php" class="dropdown-item">
                   <i class="fas fa-sign-out-alt"></i> Log out
                 </a>
+              <?php endif;
+
+              ?>
               </div>
             </li>
           </ul>

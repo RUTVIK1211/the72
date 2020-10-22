@@ -21,7 +21,7 @@
 <body class="hold-transition login-page bg-teal">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Admin</b>LTE</a>
+    <a href="#"><b>ETS</b>MANOKA</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -56,7 +56,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <input  name="action" value="login" type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <input  name="action" value="login" type="submit" class="btn btn-primary btn-block"></button>
           </div>
           <!-- /.col -->
         </div>
@@ -64,7 +64,6 @@
       <p class="mb-1">
         <a href="change-password.php">I forgot my password</a>
       </p>
-
     </div>
     <!-- /.login-card-body -->
   </div>
