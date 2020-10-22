@@ -1,5 +1,5 @@
 <?php
-require_once 'import/header.php';
+require 'import/header.php';
 ?>
 <div class="container-fluid">
   <div class="content-header">
@@ -20,7 +20,8 @@ require_once 'import/header.php';
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h4 class="pb-5">User Registrations</h4>
+                    <h3>44</h3>
+                    <p>User Registrations</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -33,12 +34,13 @@ require_once 'import/header.php';
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h4 class="pb-5">View Data</h4>
+                    <h3>65</h3>
+                    <p>View</p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
                   </div>
-                  <a href="view.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
