@@ -22,21 +22,21 @@ require_once 'dbconnection.php';
    						if (mysqli_num_rows($result) > 0) {
    								session_start();
    								$_SESSION['email'] = $email;
-   							   rd("view.php",0);
+   							   rd("view",0);
    						}
    						else
    						{
-   							rd("login.php",0);
+   							rd("login",0);
    						}
 					}
 					else
 					{
-						rd("login.php",0);
+						rd("login",0);
 					}
    				break;
 
    			default:
-   					rd("index.php");
+   					rd("index");
    				break;
    		}
 

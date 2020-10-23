@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Navbar -->
       <nav class="main-header navbar navbar-expand-md bg-teal disabled color-palette navbar-dark">
         <div class="container">
-          <a href="index.php" class="navbar-brand">
+          <a href="index" class="navbar-brand">
             <span class="brand-text font-weight-light">ETSmanoka</span>
           </a>
           <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,13 +38,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Left navbar links -->
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="index.php" class="nav-link">Home</a>
+                <a href="index" class="nav-link">Home</a>
               </li>
               <li class="nav-item">
-                <a href="insert.php" class="nav-link">Insert</a>
+                <a href="insert" class="nav-link">Insert</a>
               </li>
               <li class="nav-item">
-                <a href="view.php" class="nav-link">View</a>
+                <a href="view" class="nav-link">View</a>
               </li>
             </ul>
           </div>

@@ -25,7 +25,7 @@ require 'import/header.php';
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
                   </div>
-                  <a href="insert.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="insert" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
@@ -39,7 +39,7 @@ require 'import/header.php';
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
                   </div>
-                  <a href="view.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="view" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- ./col -->
