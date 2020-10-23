@@ -21,7 +21,7 @@
 <body class="hold-transition login-page bg-teal">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Admin</b>LTE</a>
+    <a href="#"><b>ETS</b>manoka</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

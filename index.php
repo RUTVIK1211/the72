@@ -20,8 +20,7 @@ require 'import/header.php';
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h3>44</h3>
-                    <p>User Registrations</p>
+                    <h2 class="mb-5">Insert</h2>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -34,8 +33,8 @@ require 'import/header.php';
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3>65</h3>
-                    <p>View</p>
+                    <h2 class="mb-5 ">View <i class="fa fa-eye"></i></h2>
+
                   </div>
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
