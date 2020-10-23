@@ -56,7 +56,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <input  name="action" value="login" type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <input  name="action" value="login" type="submit" class="btn btn-primary btn-block"></button>
           </div>
           <!-- /.col -->
         </div>

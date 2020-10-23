@@ -3,7 +3,7 @@
  require 'import/header.php';
 
 ?>
-	
+
 	<div class="content-wrapper" style="background-color: #FFDEE9;
 background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);" >
     <!-- Content Header (Page header) -->
@@ -22,7 +22,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
         </div>
       </div><!-- /.container-fluid -->
     </section>
-	
+
    <!-- Main content -->
     <section class="content">
       <div class="container">
@@ -37,27 +37,27 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              
+
               <div class="container">
-			<form action="insq.php" method="post" class="p-3">
+			<form action="controller" method="post" class="p-3">
 				<div class="row">
 					<div class="form-group col">
 						<label for="1">Date Actuelle</label>
-						<input type="date" class="form-control border-dark  "  id="input" name="D1" value="">
+						<input type="date" class="form-control border-dark "  id="input" name="dateactuelle" value="">
 					</div>
 					<div class="form-group col">
 						<label for="2">societe</label>
-						<input type="text" class="form-control border-dark " id="input" name="D2" value="">
+						<input type="text" class="form-control border-dark " id="input" name="societe" value="">
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col">
 						<label for="3">Agence maritime</label>
-						<input type="time" class="form-control border-dark  " id="input" name="D3" value="">
+						<input type="time" class="form-control border-dark  " id="input" name="agencemaritime" value="">
 					</div>
 					<div class="form-group col">
 						<label for="4">Numbero BL</label>
-						<input type="number" class="form-control border-dark  " id="input" name="D4" value="">
+						<input type="number" class="form-control border-dark  " id="input" name="numberbl" value="">
 					</div>
 				</div>
 				<div class="row">
@@ -406,11 +406,11 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
                       <label class="custom-file-label" for="customFile">e</label>
                     </div>
                   </div>
-				
-				
+
+
 				<div class="row">
 					<div class="form-group col-md-12">
-						<input type="submit" value="submit" name="submit" class="btn btn-outline-info">
+						<input type="submit" value="adduser" name="action" class="btn btn-outline-info">
 						<input type="reset" value="reset" class="btn btn-outline-danger">
 					</div>
 				</div>
@@ -419,11 +419,11 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
             </div>
             <!-- /.card -->
 
-           
+
 
           </div>
-     
-            
+
+
           </div>
           <!--/.col (right) -->
         </div>
