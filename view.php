@@ -1,11 +1,11 @@
 <?php
-session_start();
+require 'import/header.php';
+// session_start();
 if(empty($_SESSION['email']))
 {
    header("Location: login.php");
 }
 
-require 'import/header.php';
 ?>
 
  <div class="content-wrapper"  style="background-color: #edfffc;
