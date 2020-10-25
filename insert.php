@@ -4,8 +4,7 @@
 
 ?>
 
-	<div class="content-wrapper" style="background-color: #FFDEE9;
-background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);" >
+	<div class="content-wrapper" style="background-color: #FFDEE9; background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);" >
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -39,11 +38,11 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
               <!-- form start -->
 
               <div class="container">
-			<form action="controller" method="post" class="p-3">
+			<form action="controller" class="insertform" method="post" class="p-3">
 				<div class="row">
 					<div class="form-group col">
 						<label for="1">Date Actuelle</label>
-						<input type="date" class="form-control border-dark "  id="input" name="dateactuelle" value="">
+						<input type="date" class="form-control border-dark  "  id="input" name="dateactuelle" value="">
 					</div>
 					<div class="form-group col">
 						<label for="2">societe</label>
@@ -53,11 +52,11 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
 				<div class="row">
 					<div class="form-group col">
 						<label for="3">Agence maritime</label>
-						<input type="time" class="form-control border-dark  " id="input" name="agencemaritime" value="">
+						<input type="text" class="form-control border-dark  " id="input" name="agencemaritime" value="">
 					</div>
 					<div class="form-group col">
 						<label for="4">Numbero BL</label>
-						<input type="number" class="form-control border-dark  " id="input" name="numberbobl" value="">
+						<input type="number" class="form-control border-dark  " id="input" name="numberbl" value="">
 					</div>
 				</div>
 				<div class="row">
@@ -187,13 +186,13 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
 					</div>
 					<div class="form-group col">
 						<label for="30">  ARTICLES RETIRES PAR AUTRE 31 SOLDE DU NOMBRE ARTICLES</label>
-						<input type="text" class="form-control border-dark " id="input" name="" value="">
+						<input type="text" class="form-control border-dark " id="input" name="arpa1sdna" value="">
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col">
 						<label for="31">SOLDE DU NOMBER ARTICLES </label>
-						<input type="text" class="form-control border-dark " id="input" name="arpa1sdna" value="">
+						<input type="text" class="form-control border-dark " id="input" name="sdna" value="">
 					</div>
 					<div class="form-group col">
 						<label for="32">DATE ARRIVEE A KIN  </label>
@@ -225,7 +224,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
 						<label for="37">COUT DE DOUANE ANGOLA </label>
 						<input type="number" class="form-control border-dark " id="input" name="cdda" value="">
 					</div>
-					
+
 					<div class="form-group col">
 						<label for="38">COUT DE PORT LUANDA </label>
 						<input type="number" class="form-control border-dark " id="input" name="cdpl" value="">
@@ -368,13 +367,13 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
 					</div>
 					<div class="form-group col">
 						<label for="66">CAUTION 1 </label>
-						<input type="number" class="form-control border-dark " id="input" name="caution1" value="">
+						<input type="text" class="form-control border-dark " id="input" name="caution1" value="">
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col">
 						<label for="67"> CAUTION 2 </label>
-						<input type="number" class="form-control border-dark " id="input" name="caution2" value="">
+						<input type="text" class="form-control border-dark " id="input" name="caution2" value="">
 					</div>
 					<div class="form-group col">
 						<label for="68">FACTURE CLIENT </label>
@@ -401,11 +400,9 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
 						<input type="number" class="form-control border-dark " id="input" name="margesociete" value="">
 					</div>
 				</div>
-				
-
 				<div class="row">
 					<div class="form-group col-md-12">
-						<input type="submit" value="adduser" name="action" class="btn btn-outline-info">
+						<input type="submit" value="adddata" name="action" class="btn btn-outline-info">
 						<input type="reset" value="reset" class="btn btn-outline-danger">
 					</div>
 				</div>
@@ -413,12 +410,7 @@ background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #ffffff 100%);"
 		</div>
             </div>
             <!-- /.card -->
-
-
-
           </div>
-
-
           </div>
           <!--/.col (right) -->
         </div>

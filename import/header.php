@@ -14,6 +14,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Tempusdominus Bbootstrap 4 -->
     <!-- <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"> -->
     <link rel="stylesheet" href="dist/css/my.css">
+
+
+
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <!-- Theme style -->

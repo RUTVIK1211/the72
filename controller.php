@@ -3,9 +3,9 @@ require_once 'dbconnection.php';
    if ($_SERVER["REQUEST_METHOD"] == "POST")
    {
    	 function rd($to,$msg=0)
-   {
+       {
    		header("location: ".$to."?status=".$msg);
-   }
+       }
 
    		$action = $_POST['action'];
    		unset($_POST['action']);
@@ -34,6 +34,30 @@ require_once 'dbconnection.php';
 						rd("login",0);
 					}
    				break;
+            case "adddata":
+                  // echo '<pre>';
+                  // print_r($_POST);
+                  // die();
+                     extract($_POST);
+                     $sql1 =  "INSERT INTO datedata('DATEACTUELLE','DATERECEPTIONBL','DATEARRIVEECO','DDLJAAC','DDSCPL4JADA','DDSR','DDRC','DRDRC','AAK','DDK','AAL')
+                              VALUES($dateactuelle,$datereceptionbl,$datearriveeco,$ddljaac,$ddscpl4jada,$ddsr,$ddrc,$drdrc,$aak,$ddk,$aal);
+                     ";
+
+                     $sql2 = "INSERT INTO ndata('NUMBERBL','NUMBERCO','REDAAC','JDPDDSRMDDSN','POIDS','NOMBREDECOLIS','CDT','TELEPHONE','AVANCESURFACTURE','SOLDESURFACTURE','MARGESOCIETE')
+                              VALUES($numberbl,$numberco,$redaac,$jdpddsrmddsn,$poids,$nombredecolis,$cdt,$telephone,$avancesurfacture,$soldesurfacture,$margesociete);";
+
+
+
+
+                        echo '<pre>';
+                         print($sql1);
+                         echo '</pre>';
+                        echo '<br><br><br><pre>';
+                         print($sql2);
+                         echo '</pre>';
+
+
+               break;
 
    			default:
    					rd("index");
