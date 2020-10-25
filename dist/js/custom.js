@@ -254,11 +254,7 @@ $(function(){
 				digits: true
 			}
 		},
-		messages:{
-			dateactuelle:{
-				required: "This Field is required",
-			}
-		},
+
 		submitHandler: function(form){
 			form.submit();
 		}
