@@ -1,5 +1,5 @@
 $(function(){
-	$("form.insertform").validate({
+	$("#insertform").validate({
 		rules:{
 			dateactuelle:{
 				required:true,
@@ -73,7 +73,7 @@ $(function(){
 			nam:{
 				required:true
 			},
-			ctd:{
+			cdt:{
 				required:true,
 				digits: true
 			},
@@ -160,7 +160,7 @@ $(function(){
 				required:true,
 				digits: true
 			},
-			cdfs:{
+			cdsf:{
 				required:true,
 				digits: true
 			},
@@ -234,15 +234,15 @@ $(function(){
 			caution2:{
 				required:true
 			},
-			factureclient:{
-				required:true,
-				accept: "pdf/*"
-			},
+			// factureclient:{
+			// 	required:true,
+			// 	accept: "pdf/*"
+			// },
 			remboursementlient:{
 				required:true,
 			},
 			avancesurfacture:{
-				required:true,
+				required: true,
 				digits: true
 			},
 			soldesurfacture:{
@@ -254,9 +254,14 @@ $(function(){
 				digits: true
 			}
 		},
-
-		submitHandler: function(form){
-			form.submit();
-		}
+		// messages:{
+		// 	dateactuelle:{
+		// 		required: "this feild is required",
+		// 		date: "Please enter date only"
+		// 	}
+		// },
+		submitHandler: function(form) {
+    		form.submit();
+    	}
 	});
 });

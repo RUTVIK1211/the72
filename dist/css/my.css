@@ -1,4 +1,6 @@
-
+        .error{
+        color: red;
+      }
          .btn-grad {background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)}
          .btn-grad {
             margin: 5px;
@@ -7,7 +9,7 @@
             text-transform: uppercase;
             transition: 0.5s;
             background-size: 200% auto;
-            color: white;            
+            color: white;
             /*box-shadow: 0 0 20px #eee;*/
             /*border-radius: 10px;*/
             display: block;
@@ -18,7 +20,7 @@
             color: #fff;
             text-decoration: none;
           }
-         
+
          .btn-grad1 {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
          .btn-grad1 {
             margin: 5px;
@@ -27,7 +29,7 @@
             text-transform: uppercase;
             transition: 0.5s;
             background-size: 200% auto;
-            color: white;            
+            color: white;
             box-shadow: 0 0 20px #eee;
             border-radius: 10px;
             display: block;
@@ -38,4 +40,3 @@
             color: #fff;
             text-decoration: none;
           }
-         
