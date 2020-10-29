@@ -1,5 +1,6 @@
 <?php
 require 'import/header.php';
+require_once 'dbconnection.php';
 // session_start();
 if(empty($_SESSION['email']))
 {
@@ -41,433 +42,37 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
                 <table id="example1" class="table table-bordered table-striped rounded border-info">
                   <thead>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>Form id</th>
+                    <th>Agence maritime</th>
+                    <th>Numbero BL</th>
+                    <th>Date Arrivee Co</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
+                    <?php  $sql = "SELECT * FROM mdata INNER JOIN costdata ON mdata.cid=costdata.cid INNER JOIN datedata ON mdata.did=datedata.did INNER JOIN ndata on mdata.nid=ndata.nid INNER JOIN strdata ON mdata.sid=strdata.sid"; 
+
+                    $result = mysqli_query($conn,$sql);
+                    
+                  
+                     ?>
+                    <?php while($data = mysqli_fetch_assoc($result)): ?>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
+                    <td><?=$data['form_id']; ?></td>
+                    <td><?=$data['SOCIETE']; ?></td>
+                    <td><?=$data['NUMBERBL'];?></td>
+                    <td><button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0"  data-toggle="modal" data-target="#modal-x2">
+                      View more
+                </button></td>
                     <td>
-                    <button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0" data-toggle="modal" data-target="#modal-xl">
-                  		View more
+                    <button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0" data-toggle="modal"  data-target="#modal-xl" data-id="<?=$data['id']; ?>" id="getbtn">
+                  		Edit 
                 </button></td>
                   </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5.5</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 6
-                    </td>
-                    <td>Win 98+</td>
-                    <td>6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet Explorer 7</td>
-                    <td>Win XP SP2+</td>
-                    <td>7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>AOL browser (AOL desktop)</td>
-                    <td>Win XP</td>
-                    <td>6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 1.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 1.5</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 2.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Firefox 3.0</td>
-                    <td>Win 2k+ / OSX.3+</td>
-                    <td>1.9</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Camino 1.0</td>
-                    <td>OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Camino 1.5</td>
-                    <td>OSX.3+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Netscape 7.2</td>
-                    <td>Win 95+ / Mac OS 8.6-9.2</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Browser 8</td>
-                    <td>Win 98SE+</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Netscape Navigator 9</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.0</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.1</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.1</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.2</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.2</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.3</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.3</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.4</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.4</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.5</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.5</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.6</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.7</td>
-                    <td>Win 98+ / OSX.1+</td>
-                    <td>1.7</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.8</td>
-                    <td>Win 98+ / OSX.1+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Seamonkey 1.1</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Epiphany 2.20</td>
-                    <td>Gnome</td>
-                    <td>1.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>Safari 1.2</td>
-                    <td>OSX.3</td>
-                    <td>125.5</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>Safari 1.3</td>
-                    <td>OSX.3</td>
-                    <td>312.8</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>Safari 2.0</td>
-                    <td>OSX.4+</td>
-                    <td>419.3</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>Safari 3.0</td>
-                    <td>OSX.4+</td>
-                    <td>522.1</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>OmniWeb 5.5</td>
-                    <td>OSX.4+</td>
-                    <td>420</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>iPod Touch / iPhone</td>
-                    <td>iPod</td>
-                    <td>420.1</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>S60</td>
-                    <td>S60</td>
-                    <td>413</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 7.0</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 7.5</td>
-                    <td>Win 95+ / OSX.2+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 8.0</td>
-                    <td>Win 95+ / OSX.2+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 8.5</td>
-                    <td>Win 95+ / OSX.2+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 9.0</td>
-                    <td>Win 95+ / OSX.3+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 9.2</td>
-                    <td>Win 88+ / OSX.3+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera 9.5</td>
-                    <td>Win 88+ / OSX.3+</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Opera for Wii</td>
-                    <td>Wii</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Nokia N800</td>
-                    <td>N800</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Presto</td>
-                    <td>Nintendo DS browser</td>
-                    <td>Nintendo DS</td>
-                    <td>8.5</td>
-                    <td>C/A<sup>1</sup></td>
-                  </tr>
-                  <tr>
-                    <td>KHTML</td>
-                    <td>Konqureror 3.1</td>
-                    <td>KDE 3.1</td>
-                    <td>3.1</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>KHTML</td>
-                    <td>Konqureror 3.3</td>
-                    <td>KDE 3.3</td>
-                    <td>3.3</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>KHTML</td>
-                    <td>Konqureror 3.5</td>
-                    <td>KDE 3.5</td>
-                    <td>3.5</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Tasman</td>
-                    <td>Internet Explorer 4.5</td>
-                    <td>Mac OS 8-9</td>
-                    <td>-</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Tasman</td>
-                    <td>Internet Explorer 5.1</td>
-                    <td>Mac OS 7.6-9</td>
-                    <td>1</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Tasman</td>
-                    <td>Internet Explorer 5.2</td>
-                    <td>Mac OS 8-X</td>
-                    <td>1</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>NetFront 3.1</td>
-                    <td>Embedded devices</td>
-                    <td>-</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>NetFront 3.4</td>
-                    <td>Embedded devices</td>
-                    <td>-</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>Dillo 0.8</td>
-                    <td>Embedded devices</td>
-                    <td>-</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>Links</td>
-                    <td>Text only</td>
-                    <td>-</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>Lynx</td>
-                    <td>Text only</td>
-                    <td>-</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>IE Mobile</td>
-                    <td>Windows Mobile 6</td>
-                    <td>-</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Misc</td>
-                    <td>PSP browser</td>
-                    <td>PSP</td>
-                    <td>-</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Other browsers</td>
-                    <td>All others</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>U</td>
-                  </tr>
+                  <?php endwhile; ?>
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                  </tr>
+                 <tfoot>
+                  
                   </tfoot>
                 </table>
               </div>
@@ -484,7 +89,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
     <!-- /.content -->
   </div>
     <!-- /.content -->
-    <div class="modal fade" id="modal-xl">
+<!-- /.modal disabled  --> <div class="modal fade" id="modal-x2">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -494,7 +99,768 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
               </button>
             </div>
             <div class="modal-body">
-              <p>One fine body&hellip;</p>
+              <form action="controller" id="insertform" method="post" enctype="multipart/form-data" class="p-3">
+        <div class="row">
+          <div class="form-group col">
+            <label for="1">Date Actuelle</label>
+            <input type="date" class="form-control border-dark  "  id="dateactuelle" name="dateactuelle" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="2">societe</label>
+            <input type="text" class="form-control border-dark " id="societe" name="societe" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="3">Agence maritime</label>
+            <input type="text" class="form-control border-dark  " id="agencemaritime" name="agencemaritime" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="4">Numbero BL</label>
+            <input type="number" class="form-control border-dark  " id="numberbl" name="numberbl" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="5">Numbero CO</label>
+            <input type="number" class="form-control border-dark  " id="numberco" name="numberco" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="6">Date Reception BL</label>
+            <input type="date" class="form-control border-dark " id="datereceptionbl" name="datereceptionbl" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="7">Date Arrivee Co</label>
+            <input type="date" class="form-control border-dark  " id="datearriveeco" name="datearriveeco" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="8">Remaining Day Avant Arrivee CO</label>
+            <input type="number" class="form-control border-dark " id="redaac" name="redaac" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="9">Date DE Legalistation 7 Jours avant arrivee CO</label>
+            <input type="date" class="form-control border-dark " id="ddljaac" name="ddljaac" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="10">Date De sortie CO Port Luanda 4 jours apres date arrivee</label>
+            <input type="date" class="form-control border-dark " id="ddscpl4jada" name="ddscpl4jada" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="11">Date DE Sortie Reelle</label>
+            <input type="date" class="form-control border-dark " id="ddsr" name="ddsr" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="12">Jours DE Penalites Date DE Sortie Reelle Moins Date DE sortie Normale</label>
+            <input type="number" class="form-control border-dark " id="jdpddsrmddsn" name="jdpddsrmddsn" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="13">Date DE Retour CO</label>
+            <input type="date" class="form-control border-dark " id="ddrc" name="ddrc" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="14">Date Reelle DE Retour CO</label>
+            <input type="date" class="form-control border-dark " id="drdrc" name="drdrc" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="15">Jours DE Penalites Date DE Retour CO Reelle Moins Date DE Retour Normale</label>
+            <input type="number" class="form-control border-dark " id="jdpddrcrmddrn" name="jdpddrcrmddrn" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="16">Type DE</label>
+            <input type="text" class="form-control border-dark " id="tdc" name="tdc" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="17">POIDS</label>
+            <input type="number" class="form-control border-dark " id="poids" name="poids" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="18">Nombre DE Colis</label>
+            <input type="number" class="form-control border-dark " id="nombredecolis" name="nombredecolis" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="19">Nature marchandise</label>
+            <input type="text" class="form-control border-dark " id="nam" name="nam" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="20">Camions DE Transport </label>
+            <input type="number" class="form-control border-dark " id="cdt" name="cdt" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="21"> NOM DU CHAUFFEUR</label>
+            <input type="text" class="form-control border-dark " id="ndc" name="ndc" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="22">PLAQUE </label>
+            <input type="text" class="form-control border-dark " id="plaque" name="plaque" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="23">TELEPHONE</label>
+            <input type="number" class="form-control border-dark " id="telephone" name="telephone" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="24">JOUR OU IL QUITTE LUANDA </label>
+            <input type="text" class="form-control border-dark " id="joiql" name="joiql" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="25">JOUR ARRIVEE A LUFU </label>
+            <input type="text" class="form-control border-dark " id="jaal" name="jaal" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="26"> JOUR DEPOTAGE</label>
+            <input type="text" class="form-control border-dark " id="jourdepotag" name="jourdepotag" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="27">ARTICLES RETIRES PAR OCC </label>
+            <input type="text" class="form-control border-dark " id="arpo" name="arpo" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="28">ARTICLES RETIRES PAR VERIFICATION  </label>
+            <input type="text" class="form-control border-dark " id="arpv" name="arpv" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="29"> ARTICLES RETIRES PAR SANTE</label>
+            <input type="text" class="form-control border-dark " id="arps" name="arps" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="30">  ARTICLES RETIRES PAR AUTRE 31 SOLDE DU NOMBRE ARTICLES</label>
+            <input type="text" class="form-control border-dark " id="arpa1sdna" name="arpa1sdna" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="31">SOLDE DU NOMBER ARTICLES </label>
+            <input type="text" class="form-control border-dark " id="sdna" name="sdna" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="32">DATE ARRIVEE A KIN  </label>
+            <input type="date" class="form-control border-dark " id="aak" name="aak" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="33">DATE DEPART DE KIN </label>
+            <input type="date" class="form-control border-dark " id="ddk" name="ddk" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="34">DATE ARRIVEE A LUANDA  </label>
+            <input type="date" class="form-control border-dark " id="aal" name="aal" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="35">RETOUR CO ET INTERCHANGE </label>
+            <input type="text" class="form-control border-dark " id="rcei" name="rcei" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="36"> COUT DE LEGALISATION ET NUMERO FACTURE </label>
+            <input type="text" class="form-control border-dark " id="cdlenf" name="cdlenf" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="37">COUT DE DOUANE ANGOLA </label>
+            <input type="number" class="form-control border-dark " id="cdda" name="cdda" value="" disabled>
+          </div>
+
+          <div class="form-group col">
+            <label for="38">COUT DE PORT LUANDA </label>
+            <input type="number" class="form-control border-dark " id="cdpl" name="cdpl" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="39"> COUT DE TERMINALE LUANDA </label>
+            <input type="number" class="form-control border-dark " id="cdtl" name="cdtl" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="40">AUTRES DEPENSES </label>
+            <input type="text" class="form-control border-dark " id="autresdepenses" name="autresdepenses" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="41"> COUT DE TRANSPORT </label>
+            <input type="number" class="form-control border-dark " id="coutdetransport" name="coutdetransport" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="42"> COUT DE PASSA DE TRAVERSIA</label>
+            <input type="number" class="form-control border-dark " id="cdpdt" name="cdpdt" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="43">COUT DE FUMIGATION </label>
+            <input type="number" class="form-control border-dark " id="coutdefumigation" name="coutdefumigation" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="44"> COUT DE POLICE FRONTIERE  </label>
+            <input type="number" class="form-control border-dark " id="cdpf" name="cdpf" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="45"> COUT DE SANTE FRONTIERE</label>
+            <input type="number" class="form-control border-dark " id="cdsf" name="cdsf" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="46"> COUT DE FONER </label>
+            <input type="text" class="form-control border-dark " id="cdf" name="cdf" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="47"> IMMIGRATION DGM </label>
+            <input type="text" class="form-control border-dark " id="immigrationdgm" name="immigrationdgm" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="48"> FERI</label>
+            <input type="text" class="form-control border-dark " id="feri" name="feri" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="49"> DOUANE </label>
+            <input type="text" class="form-control border-dark " id="douane" name="douane" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="50">NUMERO E DOUANE </label>
+            <input type="text" class="form-control border-dark " id="numeroedouane" name="numeroedouane" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="51"> BULLETIN</label>
+            <input type="text" class="form-control border-dark " id="bulletin" name="bulletin" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="52">OCC LABO </label>
+            <input type="text" class="form-control border-dark " id="occlabo" name="occlabo" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="53"> REDRESSEMENT OCC </label>
+            <input type="text" class="form-control border-dark " id="redressementocc" name="redressementocc" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="54"> CAUTION CO</label>
+            <input type="text" class="form-control border-dark " id="cautionco" name="cautionco" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="55">PEAGE LUFU </label>
+            <input type="text" class="form-control border-dark " id="peagelufu" name="peagelufu" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="56">PEAGE NOKI</label>
+            <input type="text" class="form-control border-dark " id="peagenoki" name="peagenoki" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="57"> PEAGE KENGE </label>
+            <input type="text" class="form-control border-dark " id="peagekenge" name="peagekenge" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="58">PEAGE KASANGULU </label>
+            <input type="text" class="form-control border-dark " id="peagekasangulu" name="peagekasangulu" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="59"> ASSURANCE</label>
+            <input type="text" class="form-control border-dark " id="assurance" name="assurance" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="60"> FEUILLE DE ROUTE </label>
+            <input type="text" class="form-control border-dark " id="feuillederoute" name="feuillederoute" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="61">MITENDI </label>
+            <input type="text" class="form-control border-dark " id="mitendi" name="mitendi" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="62"> ANTI FRAUDE</label>
+            <input type="text" class="form-control border-dark " id="antifraude" name="antifraude" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="63"> DOUANE VILLE </label>
+            <input type="text" class="form-control border-dark " id="douaneville" name="douaneville" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="64">BDLF </label>
+            <input type="text" class="form-control border-dark " id="bdlf" name="bdlf" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="65"> PONT PESE </label>
+            <input type="text" class="form-control border-dark " id="pontpese" name="pontpese" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="66">CAUTION 1 </label>
+            <input type="text" class="form-control border-dark " id="caution1" name="caution1" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="67"> CAUTION 2 </label>
+            <input type="text" class="form-control border-dark " id="caution2" name="caution2" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="68">FACTURE CLIENT </label>
+            <input type="file" class="form-control border-dark " id="factureclient" name="factureclient" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="69">REMBOURSEMENT CLIENT </label>
+            <input type="text" class="form-control border-dark " id="remboursementlient" name="remboursementlient" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="70">AVANCE SUR FACTURE </label>
+            <input type="number" class="form-control border-dark " id="avancesurfacture" name="avancesurfacture" value="" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="71">SOLDE SUR FACTURE </label>
+            <input type="number" class="form-control border-dark " id="soldesurfacture" name="soldesurfacture" value="" disabled>
+          </div>
+          <div class="form-group col">
+            <label for="72"> MARGE SOCIETE </label>
+            <input type="number" class="form-control border-dark " id="margesociete" name="margesociete" value="" disabled disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <input type="submit" value="adddata" name="action" class="btn btn-outline-info">
+            <input type="reset" value="reset" class="btn btn-outline-danger">
+          </div>
+        </div>
+      </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+<!-- model upadate   -->
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Extra Large Modal</h4>
+              <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+        <!-- <form action="controller" method="post">
+          <div class="row">
+          <div class="form-group col">
+            <label for="1">User ID</label>
+            <input type="text" class="form-control border-dark  "  id="dateactuelle" name="dateactuelle" value="">
+          </div>
+      
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="1">Date Actuelle</label>
+            <input type="date" class="form-control border-dark  "  id="dateactuelle" name="dateactuelle" value="">
+          </div>
+          <div class="form-group col">
+            <label for="2">societe</label>
+            <input type="text" class="form-control border-dark " id="societe" name="societe" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="3">Agence maritime</label>
+            <input type="text" class="form-control border-dark  " id="agencemaritime" name="agencemaritime" value="">
+          </div>
+          <div class="form-group col">
+            <label for="4">Numbero BL</label>
+            <input type="number" class="form-control border-dark  " id="numberbl" name="numberbl" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="5">Numbero CO</label>
+            <input type="number" class="form-control border-dark  " id="numberco" name="numberco" value="">
+          </div>
+          <div class="form-group col">
+            <label for="6">Date Reception BL</label>
+            <input type="date" class="form-control border-dark " id="datereceptionbl" name="datereceptionbl" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="7">Date Arrivee Co</label>
+            <input type="date" class="form-control border-dark  " id="datearriveeco" name="datearriveeco" value="">
+          </div>
+          <div class="form-group col">
+            <label for="8">Remaining Day Avant Arrivee CO</label>
+            <input type="number" class="form-control border-dark " id="redaac" name="redaac" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="9">Date DE Legalistation 7 Jours avant arrivee CO</label>
+            <input type="date" class="form-control border-dark " id="ddljaac" name="ddljaac" value="">
+          </div>
+          <div class="form-group col">
+            <label for="10">Date De sortie CO Port Luanda 4 jours apres date arrivee</label>
+            <input type="date" class="form-control border-dark " id="ddscpl4jada" name="ddscpl4jada" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="11">Date DE Sortie Reelle</label>
+            <input type="date" class="form-control border-dark " id="ddsr" name="ddsr" value="">
+          </div>
+          <div class="form-group col">
+            <label for="12">Jours DE Penalites Date DE Sortie Reelle Moins Date DE sortie Normale</label>
+            <input type="number" class="form-control border-dark " id="jdpddsrmddsn" name="jdpddsrmddsn" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="13">Date DE Retour CO</label>
+            <input type="date" class="form-control border-dark " id="ddrc" name="ddrc" value="">
+          </div>
+          <div class="form-group col">
+            <label for="14">Date Reelle DE Retour CO</label>
+            <input type="date" class="form-control border-dark " id="drdrc" name="drdrc" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="15">Jours DE Penalites Date DE Retour CO Reelle Moins Date DE Retour Normale</label>
+            <input type="number" class="form-control border-dark " id="jdpddrcrmddrn" name="jdpddrcrmddrn" value="">
+          </div>
+          <div class="form-group col">
+            <label for="16">Type DE</label>
+            <input type="text" class="form-control border-dark " id="tdc" name="tdc" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="17">POIDS</label>
+            <input type="number" class="form-control border-dark " id="poids" name="poids" value="">
+          </div>
+          <div class="form-group col">
+            <label for="18">Nombre DE Colis</label>
+            <input type="number" class="form-control border-dark " id="nombredecolis" name="nombredecolis" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="19">Nature marchandise</label>
+            <input type="text" class="form-control border-dark " id="nam" name="nam" value="">
+          </div>
+          <div class="form-group col">
+            <label for="20">Camions DE Transport </label>
+            <input type="number" class="form-control border-dark " id="cdt" name="cdt" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="21"> NOM DU CHAUFFEUR</label>
+            <input type="text" class="form-control border-dark " id="ndc" name="ndc" value="">
+          </div>
+          <div class="form-group col">
+            <label for="22">PLAQUE </label>
+            <input type="text" class="form-control border-dark " id="plaque" name="plaque" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="23">TELEPHONE</label>
+            <input type="number" class="form-control border-dark " id="telephone" name="telephone" value="">
+          </div>
+          <div class="form-group col">
+            <label for="24">JOUR OU IL QUITTE LUANDA </label>
+            <input type="text" class="form-control border-dark " id="joiql" name="joiql" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="25">JOUR ARRIVEE A LUFU </label>
+            <input type="text" class="form-control border-dark " id="jaal" name="jaal" value="">
+          </div>
+          <div class="form-group col">
+            <label for="26"> JOUR DEPOTAGE</label>
+            <input type="text" class="form-control border-dark " id="jourdepotag" name="jourdepotag" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="27">ARTICLES RETIRES PAR OCC </label>
+            <input type="text" class="form-control border-dark " id="arpo" name="arpo" value="">
+          </div>
+          <div class="form-group col">
+            <label for="28">ARTICLES RETIRES PAR VERIFICATION  </label>
+            <input type="text" class="form-control border-dark " id="arpv" name="arpv" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="29"> ARTICLES RETIRES PAR SANTE</label>
+            <input type="text" class="form-control border-dark " id="arps" name="arps" value="">
+          </div>
+          <div class="form-group col">
+            <label for="30">  ARTICLES RETIRES PAR AUTRE 31 SOLDE DU NOMBRE ARTICLES</label>
+            <input type="text" class="form-control border-dark " id="arpa1sdna" name="arpa1sdna" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="31">SOLDE DU NOMBER ARTICLES </label>
+            <input type="text" class="form-control border-dark " id="sdna" name="sdna" value="">
+          </div>
+          <div class="form-group col">
+            <label for="32">DATE ARRIVEE A KIN  </label>
+            <input type="date" class="form-control border-dark " id="aak" name="aak" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="33">DATE DEPART DE KIN </label>
+            <input type="date" class="form-control border-dark " id="ddk" name="ddk" value="">
+          </div>
+          <div class="form-group col">
+            <label for="34">DATE ARRIVEE A LUANDA  </label>
+            <input type="date" class="form-control border-dark " id="aal" name="aal" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="35">RETOUR CO ET INTERCHANGE </label>
+            <input type="text" class="form-control border-dark " id="rcei" name="rcei" value="">
+          </div>
+          <div class="form-group col">
+            <label for="36"> COUT DE LEGALISATION ET NUMERO FACTURE </label>
+            <input type="text" class="form-control border-dark " id="cdlenf" name="cdlenf" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="37">COUT DE DOUANE ANGOLA </label>
+            <input type="number" class="form-control border-dark " id="cdda" name="cdda" value="">
+          </div>
+
+          <div class="form-group col">
+            <label for="38">COUT DE PORT LUANDA </label>
+            <input type="number" class="form-control border-dark " id="cdpl" name="cdpl" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="39"> COUT DE TERMINALE LUANDA </label>
+            <input type="number" class="form-control border-dark " id="cdtl" name="cdtl" value="">
+          </div>
+          <div class="form-group col">
+            <label for="40">AUTRES DEPENSES </label>
+            <input type="text" class="form-control border-dark " id="autresdepenses" name="autresdepenses" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="41"> COUT DE TRANSPORT </label>
+            <input type="number" class="form-control border-dark " id="coutdetransport" name="coutdetransport" value="">
+          </div>
+          <div class="form-group col">
+            <label for="42"> COUT DE PASSA DE TRAVERSIA</label>
+            <input type="number" class="form-control border-dark " id="cdpdt" name="cdpdt" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="43">COUT DE FUMIGATION </label>
+            <input type="number" class="form-control border-dark " id="coutdefumigation" name="coutdefumigation" value="">
+          </div>
+          <div class="form-group col">
+            <label for="44"> COUT DE POLICE FRONTIERE  </label>
+            <input type="number" class="form-control border-dark " id="cdpf" name="cdpf" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="45"> COUT DE SANTE FRONTIERE</label>
+            <input type="number" class="form-control border-dark " id="cdsf" name="cdsf" value="">
+          </div>
+          <div class="form-group col">
+            <label for="46"> COUT DE FONER </label>
+            <input type="text" class="form-control border-dark " id="cdf" name="cdf" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="47"> IMMIGRATION DGM </label>
+            <input type="text" class="form-control border-dark " id="immigrationdgm" name="immigrationdgm" value="">
+          </div>
+          <div class="form-group col">
+            <label for="48"> FERI</label>
+            <input type="text" class="form-control border-dark " id="feri" name="feri" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="49"> DOUANE </label>
+            <input type="text" class="form-control border-dark " id="douane" name="douane" value="">
+          </div>
+          <div class="form-group col">
+            <label for="50">NUMERO E DOUANE </label>
+            <input type="text" class="form-control border-dark " id="numeroedouane" name="numeroedouane" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="51"> BULLETIN</label>
+            <input type="text" class="form-control border-dark " id="bulletin" name="bulletin" value="">
+          </div>
+          <div class="form-group col">
+            <label for="52">OCC LABO </label>
+            <input type="text" class="form-control border-dark " id="occlabo" name="occlabo" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="53"> REDRESSEMENT OCC </label>
+            <input type="text" class="form-control border-dark " id="redressementocc" name="redressementocc" value="">
+          </div>
+          <div class="form-group col">
+            <label for="54"> CAUTION CO</label>
+            <input type="text" class="form-control border-dark " id="cautionco" name="cautionco" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="55">PEAGE LUFU </label>
+            <input type="text" class="form-control border-dark " id="peagelufu" name="peagelufu" value="">
+          </div>
+          <div class="form-group col">
+            <label for="56">PEAGE NOKI</label>
+            <input type="text" class="form-control border-dark " id="peagenoki" name="peagenoki" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="57"> PEAGE KENGE </label>
+            <input type="text" class="form-control border-dark " id="peagekenge" name="peagekenge" value="">
+          </div>
+          <div class="form-group col">
+            <label for="58">PEAGE KASANGULU </label>
+            <input type="text" class="form-control border-dark " id="peagekasangulu" name="peagekasangulu" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="59"> ASSURANCE</label>
+            <input type="text" class="form-control border-dark " id="assurance" name="assurance" value="">
+          </div>
+          <div class="form-group col">
+            <label for="60"> FEUILLE DE ROUTE </label>
+            <input type="text" class="form-control border-dark " id="feuillederoute" name="feuillederoute" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="61">MITENDI </label>
+            <input type="text" class="form-control border-dark " id="mitendi" name="mitendi" value="">
+          </div>
+          <div class="form-group col">
+            <label for="62"> ANTI FRAUDE</label>
+            <input type="text" class="form-control border-dark " id="antifraude" name="antifraude" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="63"> DOUANE VILLE </label>
+            <input type="text" class="form-control border-dark " id="douaneville" name="douaneville" value="">
+          </div>
+          <div class="form-group col">
+            <label for="64">BDLF </label>
+            <input type="text" class="form-control border-dark " id="bdlf" name="bdlf" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="65"> PONT PESE </label>
+            <input type="text" class="form-control border-dark " id="pontpese" name="pontpese" value="">
+          </div>
+          <div class="form-group col">
+            <label for="66">CAUTION 1 </label>
+            <input type="text" class="form-control border-dark " id="caution1" name="caution1" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="67"> CAUTION 2 </label>
+            <input type="text" class="form-control border-dark " id="caution2" name="caution2" value="">
+          </div>
+          <div class="form-group col">
+            <label for="68">FACTURE CLIENT </label>
+            <input type="file" class="form-control border-dark " id="factureclient" name="factureclient" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="69">REMBOURSEMENT CLIENT </label>
+            <input type="text" class="form-control border-dark " id="remboursementlient" name="remboursementlient" value="">
+          </div>
+          <div class="form-group col">
+            <label for="70">AVANCE SUR FACTURE </label>
+            <input type="number" class="form-control border-dark " id="avancesurfacture" name="avancesurfacture" value="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <label for="71">SOLDE SUR FACTURE </label>
+            <input type="number" class="form-control border-dark " id="soldesurfacture" name="soldesurfacture" value="">
+          </div>
+          <div class="form-group col">
+            <label for="72"> MARGE SOCIETE </label>
+            <input type="number" class="form-control border-dark " id="margesociete" name="margesociete" value="">
+          </div>
+        </div>
+        
+      </form> -->
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -507,6 +873,30 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
       </div>
       <!-- /.modal -->
 
+
+
+
   <?php
    require 'import/footer.php';
   ?>
+<script type="text/javascript"> 
+$(document).ready(function() { 
+    $('#getbtn').click(function() { 
+        //get id 
+        var id = $(this).data('id');
+
+        alert(id + "malel 6 boss "); 
+        // $.ajax({ 
+        //     url: "lookup.php", 
+        //     data: id, 
+        //     type: "POST", 
+        //     cache: false, 
+        //     dataType: "json" 
+        // }).done(function(response) { 
+        //     // do error checking, etc.
+        //     if (response) { 
+        //         $("#myModal").modal('show'); 
+        //     }  
+        }); 
+    }); 
+</script>
