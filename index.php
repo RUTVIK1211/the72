@@ -20,7 +20,7 @@ require 'import/header.php';
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
-                    <h2 class="mb-5">Insert</h2>
+                    <h2 class="mb-5">Insert <i class="fa fa-plus" aria-hidden="true"></i></h2>
                   </div>
                   <div class="icon">
                     <i class="ion ion-person-add"></i>

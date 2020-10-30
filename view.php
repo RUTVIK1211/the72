@@ -486,7 +486,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="editform">
         <!-- <form action="controller" method="post">
           <div class="row">
           <div class="form-group col">
@@ -887,7 +887,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
         'id': id
       },
       success: function(response){
-        $('#display_area').append(response);
+        $('#editform').append(response);
       }
     });
       }
