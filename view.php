@@ -887,7 +887,10 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
         'id': id
       },
       success: function(response){
+
+        $('#editform').empty();
         $('#editform').append(response);
+        
       }
     });
       }
