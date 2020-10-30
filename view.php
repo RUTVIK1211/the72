@@ -50,29 +50,26 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
                   </tr>
                   </thead>
                   <tbody>
-                    <?php  $sql = "SELECT * FROM mdata INNER JOIN costdata ON mdata.cid=costdata.cid INNER JOIN datedata ON mdata.did=datedata.did INNER JOIN ndata on mdata.nid=ndata.nid INNER JOIN strdata ON mdata.sid=strdata.sid"; 
-
-                    $result = mysqli_query($conn,$sql);
-                    
-                  
+                    <?php  $sql = "SELECT * FROM user_testing";
+                      $result = mysqli_query($conn,$sql);
                      ?>
                     <?php while($data = mysqli_fetch_assoc($result)): ?>
                   <tr>
-                    <td><?=$data['form_id']; ?></td>
-                    <td><?=$data['SOCIETE']; ?></td>
-                    <td><?=$data['NUMBERBL'];?></td>
+                    <td><?=$data['userid']; ?></td>
+                    <td><?=$data['societe']; ?></td>
+                    <td><?=$data['numberbobl'];?></td>
                     <td><button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0"  data-toggle="modal" data-target="#modal-x2">
                       View more
                 </button></td>
                     <td>
-                    <button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0" data-toggle="modal"  data-target="#modal-xl" data-id="<?=$data['id']; ?>" id="getbtn">
-                  		Edit 
+                    <button type="button" class="btn btn-block btn-outline-secondary btn-xs border-0" data-toggle="modal"  data-target="#modal-xl" data-id="<?=$data['userno'];?>" onclick="getbtn(this)">
+                  		Edit
                 </button></td>
                   </tr>
                   <?php endwhile; ?>
                   </tbody>
                  <tfoot>
-                  
+
                   </tfoot>
                 </table>
               </div>
@@ -496,7 +493,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
             <label for="1">User ID</label>
             <input type="text" class="form-control border-dark  "  id="dateactuelle" name="dateactuelle" value="">
           </div>
-      
+
         </div>
         <div class="row">
           <div class="form-group col">
@@ -859,7 +856,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
             <input type="number" class="form-control border-dark " id="margesociete" name="margesociete" value="">
           </div>
         </div>
-        
+
       </form> -->
             </div>
             <div class="modal-footer justify-content-between">
@@ -879,24 +876,19 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
   <?php
    require 'import/footer.php';
   ?>
-<script type="text/javascript"> 
-$(document).ready(function() { 
-    $('#getbtn').click(function() { 
-        //get id 
-        var id = $(this).data('id');
-
-        alert(id + "malel 6 boss "); 
-        // $.ajax({ 
-        //     url: "lookup.php", 
-        //     data: id, 
-        //     type: "POST", 
-        //     cache: false, 
-        //     dataType: "json" 
-        // }).done(function(response) { 
-        //     // do error checking, etc.
-        //     if (response) { 
-        //         $("#myModal").modal('show'); 
-        //     }  
-        }); 
-    }); 
+<script type="text/javascript">
+// $(document).ready(function() {
+    function getbtn(e){
+        var id = $(e).data('id');
+     $.ajax({
+      url: 'fetch.php',
+      type: 'POST',
+      data: {
+        'id': id
+      },
+      success: function(response){
+        $('#display_area').append(response);
+      }
+    });
+      }
 </script>

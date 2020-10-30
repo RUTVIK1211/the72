@@ -16,7 +16,7 @@ require_once 'dbconnection.php';
    					$password = htmlspecialchars($_POST['password']);
    					// $np = md5($password);
    					if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-   						$sql = "SELECT email FROM user WHERE email='$email' AND password='$password'";
+   						$sql = "SELECT email FROM users WHERE email='$email' AND password='$password'";
    						$result = mysqli_query($conn,$sql);
 
    						if (mysqli_num_rows($result) > 0) {
@@ -34,10 +34,39 @@ require_once 'dbconnection.php';
 						rd("login",0);
 					}
    				break;
-            case "adddata"
+            case "adddata":
                  extract($_POST);
-                 $sql  = "INSERT INTO user_testing(dateactuelle,societe,agencemaritime,numberbobl,numberco,datereceptionbl,datearriveeco,redaac,ddljaac,ddscpl4jada,ddsr,jdpddsrmddsn,ddrc,drdrc,jdpddrcrmddrn,tdc,poids,nombredecolis,nam,cdt,ndc,plaque,telephone,joiql,jaal,jourdepotag,arpo,arpv,arps,arpa1sdna,sdna,aak,ddk,aal,rcei,cdlenf,cdda,cdpl,cdtl,autresdepenses,coutdetransport,cdpdt,coutdefumigation,cdpf,cdsf,cdf,immigrationdgm,feri,douane,numeroedouane,bulletin,occlabo,redressementocc,cautionco, peagelufu,peagenoki,peagekenge,peagekasangulu,assurance,feuillederoute,mitendi,antifraude,douaneville,bdlf,pontpese,caution1,caution2,factureclient,remboursementlient,avancesurfacture,soldesurfacture,margesociete)
-                VALUES ('$dateactuelle','$societe','$agencemaritime','$numberbobl','$numberco','$datereceptionbl','$datearriveeco','$redaac','$ddljaac','$ddljaac','$ddscpl4jada','$ddsr','$jdpddsrmddsn','$ddrc','$drdrc','$jdpddrcrmddrn','$tdc','$poids','$nombredecolis','$nam','$cdt','$ndc','$plaque','$telephone','$joiql','$jaal','$jourdepotag','$arpo','$arpv','$arps','$arpa1sdna','$sdna','$aak','$rcei','$cdlenf','$cdda','$cdpl','$cdtl','$autresdepenses','$coutdetransport','$cdpdt','$coutdefumigation','$cdpf','$cdsf,'$cdf','$immigrationdgm','$feri',[value-48],[value-49],[value-50],[value-51],[value-52],[value-53],[value-54],[value-55],[value-56],[value-57],[value-58],[value-59],[value-60],[value-61],[value-62],[value-63],[value-64],[value-65],[value-66],[value-67],[value-68],[value-69],[value-70],[value-71],[value-72],[value-73]);"
+
+                  $file = $_FILES['factureclient']['name'];
+                  $tmpname = $_FILES['factureclient']['tmp_name'];
+                  $size = $_FILES['factureclient']['size'];
+                  $error = $_FILES['factureclient']['error'];
+                 $type = $_FILES['factureclient']['type'];
+
+                  $fileext = explode('.', $file);
+                  $fileactext = strtolower(end($fileext));
+
+                  $filenewname = $userid.".".$fileactext;
+                  $path = "uplods/".$filenewname;
+                  move_uploaded_file($tmpname,$path);
+
+
+                   $sql  = "INSERT INTO user_testing(userid,dateactuelle,societe,agencemaritime,numberbobl,numberco,datereceptionbl,datearriveeco,redaac,ddljaac,ddscpl4jada,ddsr,jdpddsrmddsn,ddrc,drdrc,jdpddrcrmddrn,tdc,poids,nombredecolis,nam,cdt,ndc,plaque,telephone,joiql,jaal,jourdepotag,arpo,arpv,arps,arpa1sdna,sdna,aak,ddk,aal,rcei,cdlenf,cdda,cdpl,cdtl,autresdepenses,coutdetransport,cdpdt,coutdefumigation,cdpf,cdsf,cdf,immigrationdgm,feri,douane,numeroedouane,bulletin,occlabo,redressementocc,cautionco,peagelufu,peagenoki,peagekenge,peagekasangulu,assurance,feuillederoute,mitendi,antifraude,douaneville,bdlf,pontpese,caution1,caution2,remboursementlient,avancesurfacture,soldesurfacture,margesociete,factureclient)
+                VALUES ('$userid','$dateactuelle','$societe','$agencemaritime','$numberbobl','$numberco','$datereceptionbl','$datearriveeco','$redaac','$ddljaac','$ddscpl4jada','$ddsr','$jdpddsrmddsn','$ddrc','$drdrc','$jdpddrcrmddrn','$tdc','$poids','$nombredecolis','$nam','$cdt','$ndc','$plaque','$telephone','$joiql','$jaal','$jourdepotag','$arpo','$arpv','$arps','$arpa1sdna','$sdna','$aak','$ddk','$aal','$rcei','$cdlenf','$cdda','$cdpl','$cdtl','$autresdepenses','$coutdetransport','$cdpdt','$coutdefumigation','$cdpf','$cdsf','$cdf','$immigrationdgm','$feri','$douane','$numeroedouane','$bulletin','$occlabo','$redressementocc','$cautionco','$peagelufu','$peagenoki','$peagekenge','$peagekasangulu','$assurance','$feuillederoute','$mitendi','$antifraude','$douaneville','$bdlf','$pontpese','$caution1','$caution2','$remboursementlient','$avancesurfacture','$soldesurfacture','$margesociete','$path');";
+
+                  // echo "data inserted with id".$id;
+                  // echo '<pre>';
+                  // die($sql);
+
+                  $result = mysqli_query($conn,$sql);
+
+                  if ($result) {
+                      echo 'insert';
+                  }else
+                  {
+                      echo("Error description: " . mysqli_error($conn));
+                  }
+
                 // echo '<pre>';
                  // print_r($_POST);
                  // die("the 72  half done");
