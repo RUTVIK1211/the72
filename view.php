@@ -35,7 +35,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
           <div class="col-12">
             <div class="card ">
               <div class="card-header bg-teal">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">All entries</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -43,10 +43,10 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
                   <thead>
                   <tr>
                     <th>Form id</th>
-                    <th>Agence maritime</th>
-                    <th>Numbero BL</th>
-                    <th>Date Arrivee Co</th>
-                    <th>Action</th>
+                    <th>Societe</th>
+                    <th>Numberbobl</th>
+                    <th>Edit entries</th>
+                    <th>View entries</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -101,7 +101,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              
             </div>
           </div>
           <!-- /.modal-content -->

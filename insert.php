@@ -395,7 +395,7 @@
 												<input type="number" class="form-control border-dark " id="soldesurfacture" name="soldesurfacture" value="">
 											</div>
 											<div class="form-group col">
-												<label for="72"> MARGE SOCIETE </label>
+												<label for="72"> MARGE societe </label>
 												<input type="number" class="form-control border-dark " id="margesociete" name="margesociete" value="">
 											</div>
 										</div>
