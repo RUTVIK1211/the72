@@ -6,7 +6,18 @@ if(empty($_SESSION['email']))
 {
    header("Location: login");
 }
+// echo "<pre>";
+// print_r($_GET);
+// die();
+if (!empty($_GET['status'])) {
 
+  echo "<script>swal({
+  title: 'Success!',
+  text: 'Operation Done Successfully',
+  icon: 'success',
+  button: 'Aww yiss!',
+});</script>";
+}
 ?>
 
  <div class="content-wrapper"  style="background-color: #edfffc;
@@ -45,8 +56,8 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
                     <th>Form id</th>
                     <th>Societe</th>
                     <th>Numberbobl</th>
-                    <th>Edit entries</th>
-                    <th>View entries</th>
+                    <th>Éditer entrée</th>
+                    <th>Vue entrée</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -101,7 +112,7 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              
+
             </div>
           </div>
           <!-- /.modal-content -->

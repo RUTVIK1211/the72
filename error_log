@@ -10,3 +10,5 @@
 [30-Oct-2020 14:29:53 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kunbpkrj/public_html/dbconnection.php on line 3
 [30-Oct-2020 14:30:03 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kunbpkrj/public_html/dbconnection.php on line 3
 [30-Oct-2020 14:30:32 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kunbpkrj/public_html/dbconnection.php on line 3
+[31-Oct-2020 18:22:40 UTC] PHP Parse error:  syntax error, unexpected 'user_testing' (T_STRING) in /home/kunbpkrj/public_html/controller.php on line 153
+[03-Nov-2020 06:38:05 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/kunbpkrj/public_html/controller.php on line 22

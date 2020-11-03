@@ -32,7 +32,7 @@
           </div>
           <div class='form-group col'>
             <label for='4'>Numbero BL</label>
-            <input type='number' class='form-control border-dark  ' id='numberbl' name='numberbobl' value='".$data['numberbobl']."' >
+            <input type='text' class='form-control border-dark  ' id='numberbl' name='numberbobl' value='".$data['numberbobl']."' >
           </div>
         </div>
         <div class='row'>

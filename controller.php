@@ -59,7 +59,7 @@ require_once 'dbconnection.php';
                   // die($sql);
                   $result = mysqli_query($conn,$sql);
                   if ($result) {
-                      echo 'insert';
+                      header("Location: view?status=1");
                   }else
                   {
                       echo("Error description: " . mysqli_error($conn));
@@ -156,7 +156,7 @@ require_once 'dbconnection.php';
 
                     $result = mysqli_query($conn,$sql);
                     if ($result) {
-                      header("location: view.php");
+                      header("location: view?status=1");
                     }
                     break;
                 case "exportoexel":
@@ -240,18 +240,15 @@ require_once 'dbconnection.php';
                         <th>AVANCE SUR FACTURE </th>
                         <th>SOLDE SUR FACTURE </th>
                         <th>MARGE SOCIETE </th>
-
-
-
                     </tr>
                   ";
                   $data .= "<tr>
-                    
+
                     <td>".$userid."</td>
                     <td>".$dateactuelle."</td>
                     <td>".$societe."</td>
                     <td>".$agencemaritime."</td>
-                    <td>".$numberbobl."</td>
+                    <td>".$numberbl."</td>
                     <td>".$numberco."</td>
                     <td>".$datereceptionbl."</td>
                     <td>".$datearriveeco."</td>
@@ -320,9 +317,9 @@ require_once 'dbconnection.php';
                     <td>".$avancesurfacture."</td>
                     <td>".$soldesurfacture."</td>
                     <td>".$margesociete."</td>
-                    
-                    
-                    
+
+
+
                   </tr></table>";
 
                     header("Content-Type:application/xls");
