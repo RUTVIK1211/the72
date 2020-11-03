@@ -1,6 +1,6 @@
 <?php
 require_once 'dbconnection.php';
-   if ($_SERVER["REQUEST_METHOD"] == "POST")
+   if($_SERVER["REQUEST_METHOD"] == "POST")
    {
    	 function rd($to,$msg=0)
        {
@@ -52,21 +52,18 @@ require_once 'dbconnection.php';
 
 
                    $sql  = "INSERT INTO user_testing(userid,dateactuelle,societe,agencemaritime,numberbobl,numberco,datereceptionbl,datearriveeco,redaac,ddljaac,ddscpl4jada,ddsr,jdpddsrmddsn,ddrc,drdrc,jdpddrcrmddrn,tdc,poids,nombredecolis,nam,cdt,ndc,plaque,telephone,joiql,jaal,jourdepotag,arpo,arpv,arps,arpa1sdna,sdna,aak,ddk,aal,rcei,cdlenf,cdda,cdpl,cdtl,autresdepenses,coutdetransport,cdpdt,coutdefumigation,cdpf,cdsf,cdf,immigrationdgm,feri,douane,numeroedouane,bulletin,occlabo,redressementocc,cautionco,peagelufu,peagenoki,peagekenge,peagekasangulu,assurance,feuillederoute,mitendi,antifraude,douaneville,bdlf,pontpese,caution1,caution2,remboursementlient,avancesurfacture,soldesurfacture,margesociete,factureclient)
-                VALUES ('$userid','$dateactuelle','$societe','$agencemaritime','$numberbobl','$numberco','$datereceptionbl','$datearriveeco','$redaac','$ddljaac','$ddscpl4jada','$ddsr','$jdpddsrmddsn','$ddrc','$drdrc','$jdpddrcrmddrn','$tdc','$poids','$nombredecolis','$nam','$cdt','$ndc','$plaque','$telephone','$joiql','$jaal','$jourdepotag','$arpo','$arpv','$arps','$arpa1sdna','$sdna','$aak','$ddk','$aal','$rcei','$cdlenf','$cdda','$cdpl','$cdtl','$autresdepenses','$coutdetransport','$cdpdt','$coutdefumigation','$cdpf','$cdsf','$cdf','$immigrationdgm','$feri','$douane','$numeroedouane','$bulletin','$occlabo','$redressementocc','$cautionco','$peagelufu','$peagenoki','$peagekenge','$peagekasangulu','$assurance','$feuillederoute','$mitendi','$antifraude','$douaneville','$bdlf','$pontpese','$caution1','$caution2','$remboursementlient','$avancesurfacture','$soldesurfacture','$margesociete','$path');";
+                   VALUES ('$userid','$dateactuelle','$societe','$agencemaritime','$numberbobl','$numberco','$datereceptionbl','$datearriveeco','$redaac','$ddljaac','$ddscpl4jada','$ddsr','$jdpddsrmddsn','$ddrc','$drdrc','$jdpddrcrmddrn','$tdc','$poids','$nombredecolis','$nam','$cdt','$ndc','$plaque','$telephone','$joiql','$jaal','$jourdepotag','$arpo','$arpv','$arps','$arpa1sdna','$sdna','$aak','$ddk','$aal','$rcei','$cdlenf','$cdda','$cdpl','$cdtl','$autresdepenses','$coutdetransport','$cdpdt','$coutdefumigation','$cdpf','$cdsf','$cdf','$immigrationdgm','$feri','$douane','$numeroedouane','$bulletin','$occlabo','$redressementocc','$cautionco','$peagelufu','$peagenoki','$peagekenge','$peagekasangulu','$assurance','$feuillederoute','$mitendi','$antifraude','$douaneville','$bdlf','$pontpese','$caution1','$caution2','$remboursementlient','$avancesurfacture','$soldesurfacture','$margesociete','$path');";
 
                   // echo "data inserted with id".$id;
                   // echo '<pre>';
                   // die($sql);
-
                   $result = mysqli_query($conn,$sql);
-
                   if ($result) {
                       echo 'insert';
                   }else
                   {
                       echo("Error description: " . mysqli_error($conn));
                   }
-
                 // echo '<pre>';
                  // print_r($_POST);
                  // die("the 72  half done");
@@ -97,11 +94,11 @@ require_once 'dbconnection.php';
                           //          $result4=mysqli_query($conn,$sql4);
                           //          if ($result4) {
 
-                                    // $file = $_FILES['factureclient']['name'];
-                                    // $tmpname = $_FILES['factureclient']['tmp_name'];
-                                    // $size = $_FILES['factureclient']['size'];
-                                    // $error = $_FILES['factureclient']['error'];
-                                   // $type = $_FILES['factureclient']['type'];
+                                    // $file = $_FILES['factureclient'['name';
+                                    // $tmpname = $_FILES['factureclient'['tmp_name';
+                                    // $size = $_FILES['factureclient'['size';
+                                    // $error = $_FILES['factureclient'['error';
+                                   // $type = $_FILES['factureclient'['type';
 
                                     // $fileext = explode('.', $file);
                                     // $fileactext = strtolower(end($fileext));
@@ -148,7 +145,20 @@ require_once 'dbconnection.php';
                           //   die("error: code_R1");
                           // }
                break;
+               case "updatedata":
+                     // echo count($_POST)." data founded";
+                     // echo "<pre>";
+                     // print_r($_POST);
+                     // die();
+                      extract($_POST);
 
+                    $sql = "UPDATE user_testing SET dateactuelle='$dateactuelle',societe='$societe',agencemaritime='$agencemaritime',numberbobl='$numberbobl',numberco='$numberco',datereceptionbl='$datereceptionbl',datearriveeco='$datearriveeco',redaac='$redaac',ddljaac='$ddljaac',ddscpl4jada='$ddscpl4jada',ddsr='$ddsr',jdpddsrmddsn='$jdpddsrmddsn',ddrc='$ddrc',drdrc='$drdrc',jdpddrcrmddrn='$jdpddrcrmddrn',tdc='$tdc',poids='$poids',nombredecolis='$nombredecolis',nam='$nam',cdt='$cdt',ndc='$ndc',plaque='$plaque',telephone='$telephone',joiql='$joiql',jaal='$jaal',jourdepotag='$jourdepotag',arpo='$arpo',arpv='$arpv',arps='$arps',arpa1sdna='$arpa1sdna',sdna='$sdna',aak='$aak',ddk='$ddk',aal='$aal',rcei='$rcei',cdlenf='$cdlenf',cdda='$cdda',cdpl='$cdpl',cdtl='$cdtl',autresdepenses='$autresdepenses',coutdetransport='$coutdetransport',cdpdt='$cdpdt',coutdefumigation='$coutdefumigation',cdpf='$cdpf',cdsf='$cdsf',cdf='$cdf',immigrationdgm='$immigrationdgm',feri='$feri',douane='$douane',numeroedouane='$numeroedouane',bulletin='$bulletin',occlabo='$occlabo',redressementocc='$redressementocc',cautionco='$cautionco',peagelufu='$peagelufu',peagenoki='$peagenoki',peagekenge='$peagekenge',peagekasangulu='$peagekasangulu',assurance='$assurance',feuillederoute='$feuillederoute',mitendi='$mitendi',antifraude='$antifraude',douaneville='$douaneville',bdlf='$bdlf',pontpese='$pontpese',caution1='$caution1',caution2='$caution2',factureclient='$factureclient',remboursementlient='$remboursementlient',avancesurfacture='$avancesurfacture',soldesurfacture='$soldesurfacture',margesociete='$margesociete' WHERE userno=$userno ";
+
+                    $result = mysqli_query($conn,$sql);
+                    if ($result) {
+                      header("location: view.php");
+                    }
+                    break;
    			default:
    					rd("index");
    				break;

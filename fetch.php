@@ -1,4 +1,4 @@
-<?php
+  <?php
 	require_once 'dbconnection.php';
 	$id = $_POST['id'];
 	$sql =  "SELECT * FROM user_testing WHERE userno=$id";
@@ -8,13 +8,13 @@
 
 
 	$output = " <form action='controller' id='insertform' method='post' enctype='multipart/form-data' class='p-3'>
-        
+
 		<div class='row'>
 			<div class='form-group col'>
 				<label for='1'>User ID</label>
 				<input type='text' class='form-control border-dark' id='userid' name='userid' value='".$data['userno']."' disabled>
 			</div>
-		</div> 
+		</div>
         <div class='row'>
           <div class='form-group col'>
             <label for='1'>Date Actuelle</label>
