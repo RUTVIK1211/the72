@@ -11,8 +11,8 @@
 		<div class='row'>
 			<div class='form-group col'>
 				<label for='1'>User ID</label>
-				<input type='text' class='form-control border-dark' id='userid' name='userid' value='".$data['userid']."' >
-        <input type='hidden' id='userno' name='userno' value='".$data['userno']."'>
+				<input type='text' class='form-control border-dark' id='userid' name='userid' readonly value='".$data['userid']." ' >
+        		<input type='hidden' id='userno' name='userno' value='".$data['userno']."'>
 			</div>
 		</div>
         <div class='row'>
