@@ -159,12 +159,30 @@ require_once 'dbconnection.php';
                       header("location: view.php");
                     }
                     break;
+                case "exportoexel":
+
+                  extract($_POST);
+                  $data =  "<table>
+                    <tr>
+                        <th>Form Id</th>
+                        <th>Date Actuelle</th>
+                        <th>societe</th>
+                    </tr>
+                  ";
+                  $data .= "<tr>
+                    <td>".$userid."</td>
+                    <td>".$dateactuelle."</td>
+                    <td>".$societe."</td>
+                  </tr></table>";
+
+                    header("Content-Type:application/xls");
+                    header("Content-Disposition:attachment;filename=".$userid.".xls");
+                    echo $data;
+                break;
+
    			default:
    					rd("index");
    				break;
    		}
-
-
-
    }
  ?>
