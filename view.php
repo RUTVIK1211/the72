@@ -108,11 +108,13 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
               </button>
             </div>
             <div class="modal-body" id="editform">
-
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                </div>
+              </div>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
             </div>
           </div>
           <!-- /.modal-content -->
@@ -131,6 +133,10 @@ background-image: linear-gradient(180deg, #edfffc 0%, #39cc8c 100%);">
               </button>
             </div>
             <div class="modal-body" id="viewform">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                </div>
+              </div>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
