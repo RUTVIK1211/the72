@@ -47,6 +47,7 @@ require 'import/header.php';
             <!-- /.row -->
             <!-- Main row -->
           </div>
+          <h1 class="m-0 text-dark">Devloped By Rutvik Bhimani</h1>
           <?php
           require 'import/footer.php';
           ?>
